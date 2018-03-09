@@ -132,6 +132,11 @@ export class NgxPhoneMaskDirective {
 		this.updateInputView();
 	}
 
+	@HostListener('blur')
+	onBlur() {
+		this.onTouchedCallback();
+	}
+
 	set value(v) {
 		let value = v ? v : '';
 		this._value = value;
